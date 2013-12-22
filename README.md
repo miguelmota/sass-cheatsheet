@@ -309,7 +309,7 @@ max($bar...) // 4.5
 ```
 .foo {
 	@media (min-width: 768px) {
-    // @media (min-width: 768px) { .foo { } }	
+	  // @media (min-width: 768px) { .foo { } }	
 	}
 }
 ```
