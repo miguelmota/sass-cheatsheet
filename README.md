@@ -138,8 +138,14 @@ $foo: 'serif';
  color: #000; 
 }
 
+.bar {
+  background: #fff;
+}
+
 .baz {
   @extend %foo; // color: #000
+  @extend %qux !optional; // fail silenty if not found
+  @extend .bar; // background: #fff
 }
 ```
 
@@ -231,13 +237,15 @@ $i: 1;
 $foo: bar baz qux quux;
 $grault: garphly, waldo, fred, plugh;
 
-length($foo); // 4
-append($foo, corge); // bar baz qux quux corge
+length($foo); // 4 (index starts at 1)
+append($foo, corge); // bar baz qux quux corge (does not alter original)
 join($foo, $grault); // bar baz qux quux garphly, waldo, fred, plugh
 index($foo, baz); // 2
 nth($foo, 2); // baz
 zip($foo, $grault); // [bar garphly] [baz waldo] [qux fred] [quux plugh]
 ```
+
+`zip()` example
 
 ```
 $users: foo bar;
@@ -265,7 +273,7 @@ mix(#ffff00, #0000ff, 20%); // #3300cc (3rd parameter is percentage of first col
 grayscale($foo); // grey
 invert($foo); // magenta
 complement($foo); // magenta
-background: scale_color($foo, $lightness: 20%); // #33ff33
+scale_color($foo, $lightness: 20%); // #33ff33
 scale_color($foo, [$red], [$green], [$blue], [$saturation], [$lightness], [$alpha]); // changes color aspect(s) relative, rather than linearly, to the start value
 ```
 
@@ -294,10 +302,12 @@ max($bar...) // 4.5
 ```
 .foo {
 	@media (min-width: 768px) {
-	
+    // @media (min-width: 768px) { .foo { } }	
 	}
 }
 ```
+
+Using a mixin
 
 ```
 @mixin respond-to($media) {
