@@ -188,7 +188,7 @@ $foo: bar baz qux;
 
 @each $f in $foo {
 	.quux-#{$f} {
-		background: url(quux-#{$f}.png); // quux-bar { }
+		background: url(quux-#{$f}.png); // .quux-bar { background: url(quux-bar.png) }
 	}
 }
 ```
