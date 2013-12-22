@@ -39,6 +39,8 @@ $bar: baz qux quux corge;
 
 ### Nesting
 
+Selector nesting
+
 ```
 .foo  {
   .bar {
@@ -46,7 +48,10 @@ $bar: baz qux quux corge;
   }
 }
 ```
+
 [source](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#nested_rules)
+
+Property nesting
 
 ```
 .foo {
@@ -117,6 +122,8 @@ $foo: 'serif';
   @include foo(#000, 10px);
 }
 ```
+
+Variable arguments
 
 ```
 @mixin bar($baz...) {
