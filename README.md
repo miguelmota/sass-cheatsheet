@@ -56,9 +56,7 @@ Property nesting
 ```
 .foo {
   text: {
-    align: center;
-    
-    // .foo { text-align: center; }
+    align: center; // .foo { text-align: center; }
   }
 }
 ```
