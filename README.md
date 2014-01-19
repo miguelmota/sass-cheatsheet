@@ -4,7 +4,7 @@
 
 ### Watching
 
-```css
+```bash
 sass --watch sass:css
 ```
 
