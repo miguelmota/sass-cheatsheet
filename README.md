@@ -4,7 +4,7 @@
 
 ### Watching
 
-```
+```css
 sass --watch sass:css
 ```
 
@@ -12,7 +12,7 @@ sass --watch sass:css
 
 ### Comments
 
-```
+```css
 // I will not show when compiled
 
 /* I will be shown when compiled */
@@ -22,7 +22,7 @@ sass --watch sass:css
 
 ### Imports
 
-```
+```css
 @import 'foo';
 ```
 
@@ -30,7 +30,7 @@ sass --watch sass:css
 
 ### Variables
 
-```
+```css
 $foo: #000 !default;
 $bar: baz qux quux corge;
 ```
@@ -41,7 +41,7 @@ $bar: baz qux quux corge;
 
 Selector nesting
 
-```
+```css
 .foo  {
   .bar {
     // .foo .bar { }
@@ -53,7 +53,7 @@ Selector nesting
 
 Property nesting
 
-```
+```css
 .foo {
   text: {
     align: center; // .foo { text-align: center; }
@@ -65,7 +65,7 @@ Property nesting
 
 ### Parent Selectors
 
-```
+```css
 a {
   &:hover {
     // a:hover { }
@@ -73,7 +73,7 @@ a {
 }
 ```
 
-```
+```css
 .bar {
  .foo & {
    // .foo .bar { }
@@ -85,7 +85,7 @@ a {
 
 ### Interpolation
 
-```
+```css
 $foo: bar;
 
 .baz-#{$foo} {
@@ -98,7 +98,7 @@ $foo: bar;
 
 ### Concatenation
 
-```
+```css
 $foo: 'serif';
 
 .bar {
@@ -108,7 +108,7 @@ $foo: 'serif';
 
 ### Mixins
 
-```
+```css
 @mixin foo($bar, $baz: false) {
   color: $bar;
   @if baz {
@@ -123,7 +123,7 @@ $foo: 'serif';
 
 Variable arguments
 
-```
+```css
 @mixin bar($baz...) {
   box-shadow: $baz
 }
@@ -138,7 +138,7 @@ Variable arguments
 
 ### Extend
 
-```
+```css
 %foo {
  color: #000; 
 }
@@ -161,7 +161,7 @@ Variable arguments
 
 #### if, if else, else
 
-```
+```css
 $foo: bar;
 
 .qux {
@@ -181,7 +181,7 @@ $foo: bar;
 
 #### each
 
-```
+```css
 $foo: bar baz qux;
 
 @each $f in $foo {
@@ -193,7 +193,7 @@ $foo: bar baz qux;
 
 #### for
 
-```
+```css
 .qux {
 	@for $i 1 through 5 {
 		&.qux-#{$i} {
@@ -205,7 +205,7 @@ $foo: bar baz qux;
 
 #### while
 
-```
+```css
 $i: 1;
 
 .qux {
@@ -224,7 +224,7 @@ $i: 1;
 
 ### Function directives
 
-```
+```css
 @function foo($bar, $baz) {
 	@return ($bar / $baz);
 }
@@ -238,7 +238,7 @@ $i: 1;
 
 ### List functions
 
-```
+```css
 $foo: bar baz qux quux;
 $grault: garphly, waldo, fred, plugh;
 
@@ -252,7 +252,7 @@ zip($foo, $grault); // [bar garphly] [baz waldo] [qux fred] [quux plugh]
 
 `zip()` example
 
-```
+```css
 $users: foo bar;
 $colors: blue green;
 $style: zip($names, $colors); // [foo blue] [bar green]
@@ -265,7 +265,7 @@ $style: zip($names, $colors); // [foo blue] [bar green]
 
 ### Color functions
 
-```
+```css
 $foo: #ff0000;
 
 rgba($foo, 0.8); // rgba(0, 255, 0, 0.8)
@@ -286,7 +286,7 @@ scale_color($foo, [$red], [$green], [$blue], [$saturation], [$lightness], [$alph
 
 ### Number functions
 
-```
+```css
 $foo: 1.4;
 $bar: 1.3 4.5 -2.8;
 
@@ -297,14 +297,13 @@ abs($foo); // 1.4
 percentage($foo) // 140%
 min($bar...) // -2.8
 max($bar...) // 4.5
-
 ```
 
 [source](http://sass-lang.com/documentation/Sass/Script/Functions.html#number_functions)
 
 ### Media queries
 
-```
+```css
 .foo {
 	@media (min-width: 768px) {
 	  // @media (min-width: 768px) { .foo { } }	
@@ -314,7 +313,7 @@ max($bar...) // 4.5
 
 Using a mixin
 
-```
+```css
 @mixin respond-to($media) {
 	@if $media == desktop {
 		@media (min-width: 960px) {
