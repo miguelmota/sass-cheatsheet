@@ -167,7 +167,7 @@ $foo: bar;
 .qux {
   @if $foo == bar {
      color: #000;
-  } @if $foo == baz {
+  } @else if $foo == baz {
     color: #fff;
    } @else {
      color: #999;
