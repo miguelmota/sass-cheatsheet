@@ -112,7 +112,7 @@ $foo: 'serif';
 @mixin foo($bar, $baz: false) {
   color: $bar;
   @if baz {
-    border-radius: $baz;  
+    border-radius: $baz;
   }
 }
 
@@ -140,7 +140,7 @@ Variable arguments
 
 ```css
 %foo {
- color: #000; 
+ color: #000;
 }
 
 .bar {
@@ -195,7 +195,7 @@ $foo: bar baz qux;
 
 ```css
 .qux {
-	@for $i 1 through 5 {
+	@for $i from 1 through 5 {
 		&.qux-#{$i} {
 			// .qux.qux-1 { }
 		}
@@ -213,7 +213,7 @@ $i: 1;
 		&.qux-#{$i} {
 			// .qux.qux-1 { }
 		}
-		
+
 		$i: $i + 1;
 	}
 }
@@ -271,7 +271,7 @@ $foo: #ff0000;
 rgba($foo, 0.8); // rgba(0, 255, 0, 0.8)
 lighten($foo, 20%); // #66ff66
 darken($foo, 20%); // #009900
-saturate($foo, 20%); // lime 
+saturate($foo, 20%); // lime
 desaturate($foo, 20%); // #19e619
 mix(#ff0000, #0000ff); // #7f007f
 mix(#ffff00, #0000ff, 20%); // #3300cc (3rd parameter is percentage of first color)
@@ -306,7 +306,7 @@ max($bar...) // 4.5
 ```css
 .foo {
 	@media (min-width: 768px) {
-	  // @media (min-width: 768px) { .foo { } }	
+	  // @media (min-width: 768px) { .foo { } }
 	}
 }
 ```
