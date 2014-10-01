@@ -179,6 +179,16 @@ $foo: bar;
 }
 ```
 
+```
+$foo: "foo";
+$bar: "bar";
+$qux: "qux";
+
+@if ($foo == "foo" and not ($bar == "bar")) or ($qux == "qux") {
+  // second condition is true
+}
+```
+
 #### each
 
 ```css
